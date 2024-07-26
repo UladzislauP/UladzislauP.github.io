@@ -9,9 +9,11 @@
         body, html {
             height: 100%;
             margin: 0;
+            display: flex;
+            flex-direction: column;
         }
         #map {
-            height: 100%;
+            flex-grow: 1;
             width: 100%;
         }
         .image-container {
@@ -19,10 +21,12 @@
             top: 10px;
             left: 10px;
             z-index: 1000;
+            width: 100%;
+            max-width: 640px;
         }
         .image-container img {
-            width: 640px;
-            height: 360px;
+            width: 100%;
+            height: auto;
         }
     </style>
 </head>
