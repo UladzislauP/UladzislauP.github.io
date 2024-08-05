@@ -1,0 +1,68 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+.container {
+    width: 375px; /* Adjust to fit Telegram's view */
+    height: 667px; /* Adjust to fit Telegram's view */
+    background-color: #D3D3D3;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.question-container {
+    width: 100%;
+    background-color: #D3D3D3;
+    text-align: center;
+    padding: 10px 0;
+}
+#map {
+    width: 100%;
+    height: 80%;
+    position: relative;
+}
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #D3D3D3; /* Color matching the top bar */
+}
+.button {
+    padding: 10px 40px; /* Increased padding for better button appearance */
+    font-size: 18px;
+    border: 2px solid black; /* Black border */
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer;
+    background-color: #2D2D2D; /* Color matching the top bar */
+    color: black; /* Default text color */
+    text-shadow: 1px 1px 1px black; /* Black text outline */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+.button.yes:hover, .button.yes:focus {
+    background-color: green; /* Highlight on hover/focus */
+    color: white; /* Change text color to white for better contrast */
+}
+.button.no:hover, .button.no:focus {
+    background-color: red; /* Highlight on hover/focus */
+    color: white; /* Change text color to white for better contrast */
+}
+.leaflet-control-zoom-info {
+    margin-top: 5px; /* Margin to adjust space below zoom buttons */
+    font-size: 24px;
+    color: #2D2D2D; /* Dark gray color */
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
