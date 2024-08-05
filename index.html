@@ -5,66 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa Leaflet z Poligonem</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-        }
-        #map {
-            flex-grow: 1;
-            width: 100%;
-        }
-        .image-container {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 1000;
-            width: 100%;
-            max-width: 640px;
-        }
-        .image-container img {
-            width: 100%;
-            height: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
-    <div id="map"></div>
-    <div class="image-container">
-        <img src="path_to_your_image.jpg" alt="Bot and Plac Defilad">
+    <div class="container">
+        <div class="question-container">
+            <h2>Pytanie?</h2>
+        </div>
+        <div id="map"></div>
+        <div class="button-container">
+            <button class="button no" onclick="redirectToIndex('no')">Nie</button>
+            <button class="button yes" onclick="redirectToIndex('yes')">Tak</button>
+        </div>
     </div>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script>
-        var map = L.map('map').setView([52.23189489585977, 21.00729567750159], 17);
-        
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        var latlngs = [
-            [52.233974984772395, 21.002481588666186],
-            [52.2352152886107, 21.008359476667984],
-            [52.22983506207801, 21.011717183703094],
-            [52.22855980591468, 21.005608624394295]
-        ];
-
-        var polygon = L.polygon(latlngs, {
-            color: 'red',
-            weight: 2,
-            opacity: 1,
-            fillColor: 'red',
-            fillOpacity: 0.1 
-        }).addTo(map);
-
-        var centerLatLng = polygon.getBounds().getCenter();
-
-        L.marker(centerLatLng).addTo(map)
-            .bindPopup('Obszar opracowania')
-            .openPopup();
-
-        map.fitBounds(polygon.getBounds());
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
