@@ -8,7 +8,7 @@ body, html {
 }
 .container {
     width: 390px; /* Adjust to fit Telegram's view */
-    height: 600px; /* Adjust to fit Telegram's view */
+    height: 700px; /* Adjust to fit Telegram's view */
     background-color: #D3D3D3;
     border: 1px solid #ccc;
     display: flex;
