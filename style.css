@@ -9,9 +9,9 @@ body, html {
 
 .container {
     width: 80%;
-    max-width: 500px; 
+    max-width: 600px; 
     height: 80%;
-    max-height: 700px;
+    max-height: 600px;
     background-color: #D3D3D3;
     border: 1px solid #ccc;
     display: flex;
