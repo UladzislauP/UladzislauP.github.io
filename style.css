@@ -8,10 +8,10 @@ body, html {
 }
 
 .container {
-    width: 80%;
+    width: 90%; /* Zmniejszono szerokość, aby lepiej pasowała do mobilnych ekranów */
     max-width: 600px; 
-    height: 80%;
-    max-height: 600px;
+    height: 90%; /* Zwiększono wysokość, aby lepiej pasowała do mobilnych ekranów */
+    max-height: 700px;
     background-color: #D3D3D3;
     border: 1px solid #ccc;
     display: flex;
@@ -25,7 +25,7 @@ body, html {
     background-color: #D3D3D3;
     text-align: center;
     font-style: italic;
-    font-size: 22px;
+    font-size: 20px; /* Zmniejszono rozmiar tekstu */
     font-weight: bold;
     color: #2D2D2D;
     padding: 10px 0;
@@ -33,7 +33,7 @@ body, html {
 
 #map {
     width: 100%;
-    flex-grow: 1; 
+    height: calc(100% - 120px); /* Odjęto wysokość nagłówka i przycisków */
     position: relative;
 }
 
@@ -46,8 +46,8 @@ body, html {
 }
 
 .button {
-    padding: 10px 40px; /* Increased padding for better button appearance */
-    font-size: 18px;
+    padding: 10px 30px; /* Zmniejszono padding */
+    font-size: 16px; /* Zmniejszono rozmiar czcionki */
     border: 2px solid black; /* Black border */
     border-radius: 20px; /* Rounded corners */
     cursor: pointer;
@@ -85,13 +85,13 @@ body, html {
 /* Media queries for responsiveness */
 @media (max-width: 600px) {
     .container {
-        width: 90%;
-        height: 90%;
+        width: 95%;
+        height: 95%;
     }
 
     .button {
-        font-size: 16px;
-        padding: 8px 20px;
+        font-size: 14px;
+        padding: 8px 16px;
     }
 }
 
