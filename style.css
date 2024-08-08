@@ -10,8 +10,8 @@ body, html {
 .container {
     width: 100%;
     height: 100%;
-    max-width: 500px; /* Maksymalna szerokość */
-    max-height: 700px; /* Maksymalna wysokość */
+    max-width: 600px; /* Maksymalna szerokość */
+    max-height: 800px; /* Maksymalna wysokość */
     background-color: #D3D3D3;
     border: 1px solid #ccc;
     display: flex;
