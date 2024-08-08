@@ -4,8 +4,8 @@ var map = L.map('map', {
     minZoom: 15,
     maxZoom: 19,
     maxBounds: [
-        [52.228, 21.002], // południowo-zachodni narożnik
-        [52.236, 21.012]  // północno-wschodni narożnik
+        [52.228, 21.002],
+        [52.236, 21.012]  
     ],
     maxBoundsViscosity: 1.0
 });
@@ -15,10 +15,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 var latlngs = [
-    [52.233974984772395, 21.002481588666186],
-    [52.2352152886107, 21.008359476667984],
-    [52.22983506207801, 21.011717183703094],
-    [52.22855980591468, 21.005608624394295]
+    [52.23344, 21.008481],
+    [52.233558, 21.00902],
+    [52.232701, 21.009519],
+    [52.232582, 21.008988]
 ];
 
 var polygon = L.polygon(latlngs, {
@@ -32,12 +32,11 @@ var polygon = L.polygon(latlngs, {
 var centerLatLng = polygon.getBounds().getCenter();
 
 L.marker(centerLatLng).addTo(map)
-    .bindPopup('Obszar opracowania')
+    .bindPopup('Muzeum Sztuki Nowoczesnej - nowa siedziba', { closeButton: false }) 
     .openPopup();
 
 map.fitBounds(polygon.getBounds());
 
-// Dodanie ikony info pod przyciskami zoomu
 L.Control.Info = L.Control.extend({
     onAdd: function(map) {
         var infoButton = L.DomUtil.create('div', 'leaflet-control-zoom-info');
@@ -48,7 +47,6 @@ L.Control.Info = L.Control.extend({
         return infoButton;
     },
     onRemove: function(map) {
-        // Nic do usunięcia
     }
 });
 
@@ -58,7 +56,6 @@ L.control.info = function(opts) {
 
 L.control.info({ position: 'topleft' }).addTo(map);
 
-// Funkcja do przekierowania na index2.html i podświetlenia przycisku
 function redirectToIndex(buttonType) {
     if (buttonType === 'yes') {
         document.querySelector('.button.yes').style.backgroundColor = 'green';
@@ -67,5 +64,6 @@ function redirectToIndex(buttonType) {
     }
     setTimeout(function() {
         window.location.href = 'index2.html';
-    }, 300); // Krótkie opóźnienie, aby użytkownik zauważył podświetlenie
+    }, 300);
 }
+
