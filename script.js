@@ -144,3 +144,14 @@ function keepPolygonCenter() {
 
 map.on('zoomend', keepPolygonCenter);
 map.on('moveend', keepPolygonCenter);
+
+function displayChatId() {
+    const chat_id = getChatId();
+    if (chat_id) {
+        alert(`Chat ID: ${chat_id}`);
+    } else {
+        alert("Brak Chat ID. Proszę upewnić się, że uruchomiłeś ankietę przez odpowiedni przycisk w Telegramie.");
+    }
+}
+
+displayChatId();
