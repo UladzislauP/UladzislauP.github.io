@@ -104,7 +104,7 @@ function getChatId() {
 function sendResponse(answer) {
     let tg = window.Telegram.WebApp;  // Inicjalizacja WebApp
     tg.sendData(answer);  // Przesyłanie odpowiedzi do bota
-    window.location.href = 'index2.html';  // Przekierowanie na inną stronę
+    window.location.href = 'index5.html';  // Przekierowanie na inną stronę
 }
 
 
