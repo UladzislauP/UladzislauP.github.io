@@ -1,6 +1,13 @@
 let tg = window.Telegram.WebApp;
 
-tg.expand(); 
+tg.expand(); // Rozszerza WebApp na pełny ekran
+
+function sendResponse(answer) {
+    const buttonId = 0; 
+    tg.sendData(JSON.stringify({ answer: answer, button_id: buttonId })); 
+    console.log("Dane wysłane do bota: ", { answer: answer, button_id: buttonId });
+    window.location.href = 'index2.html';  
+}
 
 var map = L.map('map', {
     center: [52.23189489585977, 21.00729567750159],
@@ -95,13 +102,6 @@ L.control.info = function(opts) {
 }
 
 L.control.info({ position: 'topleft' }).addTo(map);
-
-function sendResponse(answer) {
-    tg.sendData(JSON.stringify({ answer: answer, button_id: 0 })); 
-    console.log("Dane wysłane do bota: ", { answer: answer, button_id: 0 });
-    window.location.href = 'index2.html';  // Przekierowanie na inną stronę
-}
-
 
 function keepPolygonCenter() {
     var centerLatLng = polygon.getBounds().getCenter();
