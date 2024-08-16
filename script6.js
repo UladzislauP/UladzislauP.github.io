@@ -97,7 +97,7 @@ L.control.info({ position: 'topleft' }).addTo(map);
 function sendResponse(answer) {
     let tg = window.Telegram.WebApp;  // Inicjalizacja WebApp
     tg.sendData(JSON.stringify({ answer: answer, button_id: 5 })); 
-    window.location.href = 'index2.html';  // Przekierowanie na inną stronę
+    window.location.href = 'index7.html';  // Przekierowanie na inną stronę
 }
 
 // Ensure the map stays centered on the polygon center
