@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informacje o Muzeum</title>
+    <link rel="stylesheet" href="info2.css">
+</head>
+
+<body>
+    <div class="info-container">
+        <div class="image-container">
+            <img id="image1" src="tunel1.jpg" alt="Tunel">
+            <img id="image2" src="tunel2.jpg" alt="Projekt" style="display: none;">
+            <div class="arrow left-arrow disabled" onclick="showPreviousImage()">&#10094;</div>
+            <div class="arrow right-arrow" onclick="showNextImage()">&#10095;</div>
+        </div>
+        <div class="title">Oficjalnie zamknięty Tunel pod Marszałkowską</div>
+        <div class="text">
+            <p>Nowy etap realizacji projektu Nowego Centrum Warszawy wiąże się z zamknięciem tunelu przy ulicy Złotej. W
+                nocy z 28 na 29 czerwca został zamknięty zjazd do tunelu od strony Marszałkowskiej, co oznaczało
+                ostatnią szansę na przejazd tym odcinkiem drogi. Ruch na ulicy Złotej wzdłuż tunelu jest kontynuowany,
+                otwarte pozostały dwie jezdnie, zawrotka oraz wyjazd w prawo w kierunku Marszałkowskiej.</p>
+
+            <p>Zadanie związane z przebudową tunelu nie było łatwe, ale kluczowe w kontekście budowy Nowego Centrum
+                Warszawy. Działania obejmują nie tylko zasypanie tunelu, ale również częściową rozbiórkę i zalanie
+                betonem niektórych jego elementów, aby zapewnić pełne bezpieczeństwo przejazdu przez ulicę
+                Marszałkowską. W ramach tych prac przebudowana została także duża stacja trafo znajdująca się w tunelu.
+                Ponadto, teren wokół tunelu zyska nowe chodniki i zieleń, harmonizując z estetyką Placu Centralnego i
+                okolic ulic Złotej i Zgoda.</p>
+        </div>
+        <div class="button-container">
+            <button onclick="window.location.href='index2.html'">Wstecz</button>
+        </div>
+    </div>
+    <script>
+        let currentImageIndex = 1;
+
+        function showNextImage() {
+            const image1 = document.getElementById("image1");
+            const image2 = document.getElementById("image2");
+            const leftArrow = document.querySelector('.left-arrow');
+            const rightArrow = document.querySelector('.right-arrow');
+
+            if (currentImageIndex === 1) {
+                image1.style.display = "none";
+                image2.style.display = "block";
+                currentImageIndex = 2;
+                leftArrow.classList.remove('disabled');
+                rightArrow.classList.add('disabled');
+            }
+        }
+
+        function showPreviousImage() {
+            const image1 = document.getElementById("image1");
+            const image2 = document.getElementById("image2");
+            const leftArrow = document.querySelector('.left-arrow');
+            const rightArrow = document.querySelector('.right-arrow');
+
+            if (currentImageIndex === 2) {
+                image1.style.display = "block";
+                image2.style.display = "none";
+                currentImageIndex = 1;
+                leftArrow.classList.add('disabled');
+                rightArrow.classList.remove('disabled');
+            }
+        }
+    </script>
+</body>
+
+</html>
