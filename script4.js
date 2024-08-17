@@ -80,7 +80,7 @@ L.Control.Info = L.Control.extend({
         var infoButton = L.DomUtil.create('div', 'leaflet-control-zoom-info');
         infoButton.innerHTML = '<span class="material-symbols-outlined">info</span>';
         L.DomEvent.on(infoButton, 'click', function() {
-            window.location.href = 'index_info.html';
+            window.location.href = 'index4_info.html';
         });
         return infoButton;
     },
